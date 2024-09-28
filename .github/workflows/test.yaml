@@ -2,7 +2,7 @@ name: build
 on: [push]
 jobs:
         build:
-                runs-on: ubutu-latest
+                runs-on: ubuntu-latest
                 steps:
                         - uses: actions/checkout@v4
                         - run: g++ main.cpp my_add.cpp -o main
