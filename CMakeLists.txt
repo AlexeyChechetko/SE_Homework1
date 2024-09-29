@@ -31,4 +31,25 @@ include(GoogleTest)
 gtest_discover_tests(tests)
 
 
+find_package(Doxygen REQUIRED)
+
+if(DOXYGEN_FOUND)
+	find_package(Doxygen REQUIRED) 
+ 
+	# Укажите параметры для Doxygen 
+	set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in) 
+	set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile) 
+ 
+	# Создайте Doxyfile из шаблона 
+	configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY) 
+ 
+	# Добавьте команду для генерации документации 
+	add_custom_target(doc ALL 
+    		COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT} 
+    		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} 
+		COMMENT "Генерация документации с помощью Doxygen" 
+	)	
+endif()
+
+
 
