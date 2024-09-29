@@ -23,6 +23,14 @@ jobs:
                       name: binaries
                   - run: chmod +x tests && ./tests
 
+        benchmarks:
+                needs: build
+                runs-on: ubuntu-latest
+                steps:
+                  - uses: actions/download-artifact@v4
+                    with:
+                      name: binaries
+                  - run: chmod +x benchmarks && ./benchmarks
         run:
                 needs: build
                 runs-on: ubuntu-latest
