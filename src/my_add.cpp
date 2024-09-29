@@ -1,11 +1,12 @@
+///\file
 /**
- * @brief Суммирует два целых числа
+ * @brief Sums up two integer numbers. 
  *
- * Эта функция принимает два целых числа и возвращает их сумму.
+ * This function takes two integer numbers and returns their sum.
  *
- * @param a Первое целое число.
- * @param b Второе целое число.
- * @return int Сумма двух целых чисел.
+ * @param a The first integer number.
+ * @param b The second integer number.
+ * @return int The sum of two integer numbers.
  */
 
 int my_add(int a, int b)

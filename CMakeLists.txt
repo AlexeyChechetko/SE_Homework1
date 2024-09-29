@@ -34,8 +34,7 @@ gtest_discover_tests(tests)
 find_package(Doxygen REQUIRED)
 
 if(DOXYGEN_FOUND)
-	find_package(Doxygen REQUIRED) 
- 
+
 	# Укажите параметры для Doxygen 
 	set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in) 
 	set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile) 
@@ -47,7 +46,7 @@ if(DOXYGEN_FOUND)
 	add_custom_target(doc ALL 
     		COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT} 
     		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} 
-		COMMENT "Генерация документации с помощью Doxygen" 
+		COMMENT "Generation documentation with Doxygen" 
 	)	
 endif()
 
